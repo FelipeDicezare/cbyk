@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "7c6a0629-94c9-460d-9144-47f6567f45be",
+		"name": "CBYK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1130712"
+	},
+	"item": [
+		{
+			"name": "Contas A Pagar",
+			"item": [
+				{
+					"name": "Cadastrar Conta",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataVencimento\": \"2024-12-01 16:00:00\",\r\n    \"dataPagamento\": \"2024-11-30 12:22:11\",\r\n    \"valor\": 25.00,\r\n    \"descricao\": \"CAP 003\",\r\n    \"situacao\": \"AGUARDANDO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/v1/conta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"v1",
+								"conta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alteração do Conta",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"705368e0-b797-4663-9235-c62bb31cbd51\",\r\n    \"dataVencimento\": \"2024-12-10 16:00:00\",\r\n    \"dataPagamento\": \"2024-12-01 16:00:00\",\r\n    \"valor\": 12.00,\r\n    \"descricao\": \"CAP 002\",\r\n    \"situacao\": \"AGUARDANDO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/v1/conta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"v1",
+								"conta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alteração da Situação da Conta",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"705368e0-b797-4663-9235-c62bb31cbd51\",\r\n    \"situacao\": \"PAGA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/v1/conta/situacao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"v1",
+								"conta",
+								"situacao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar  Conta Por ID",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8083/v1/conta/247896f9-48c5-431e-8e2f-0fe6f47816b0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"v1",
+								"conta",
+								"247896f9-48c5-431e-8e2f-0fe6f47816b0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar  Conta Filtros",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "user",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataVencimentoInicial\": \"2024-11-01 16:00:00\",\r\n    \"dataVencimentoFinal\": \"2024-12-31 16:00:00\",\r\n    \"descricao\": \"CAP\",\r\n    \"pagina\": 0,\r\n    \"limite\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/v1/conta/filtros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"v1",
+								"conta",
+								"filtros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soma das Contas",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataPagamentoInicial\": \"2024-11-01 16:00:00\",\r\n    \"dataPagamentoFinal\": \"2024-12-31 16:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/v1/conta/somatoria",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"v1",
+								"conta",
+								"somatoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exportar CSV",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/felip/Downloads/novo 4.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8083/v1/conta/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"v1",
+								"conta",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

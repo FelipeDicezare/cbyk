@@ -1,0 +1,58 @@
+## Configuração Default da Aplicação ##
+
+server:
+  ## HTTP Server port
+  port: 8083
+
+## Config Application and Database
+spring:
+  application:
+    name: cbyk
+  jmx:
+    enabled: false
+  datasource:
+    ## Config database
+    url: ${database.url}
+    password: ${database.password}
+    username: ${database.username}
+    hikari:
+      minimum-idle: ${database.minimum-idle}
+      maximum-pool-size: ${database.maximum-pool-size}
+      connectionTimeout: 180000
+      idleTimeout: 60000
+      maxLifetime: 180000
+  jpa:
+    database-platform: ${database.database-platform}
+    show-sql: false
+    properties:
+      hibernate:
+        ddl-auto: update
+        proc:
+          param_null_passing: true
+        boot:
+          allow_jdbc_metadata_access: false
+  ## FlywatDB
+  flyway:
+    baselineOnMigrate: true
+
+## Springdoc
+springdoc:
+  api-docs:
+    path: /cbyk/v3/api-docs
+
+## Logging level can be one of TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF.
+logging:
+  level:
+    root: WARN
+    br.com.cbyk: INFO
+    org.hibernate.SQL: ERROR
+
+## Actuator = Info, Health ##
+management:
+  endpoints:
+    web:
+      exposure:
+        endpoint:
+          health:
+            show-details: when-authorized
+        include: health,info

@@ -1,0 +1,21 @@
+## Configuração Local (Máquina do Desenvolvedor) ##
+
+## Config Database
+database:
+  database-platform: org.hibernate.dialect.PostgreSQLDialect
+  url: jdbc:postgresql://db:5432/cbyk
+  username: postgres
+  password: postgres123
+  minimum-idle: 2
+  maximum-pool-size: 3
+
+## Config Jwt
+security:
+  jwtKey: 'p=j;((lI<Q?xUuS%hv}&J-0yxZe:/=H5_|+]u^bq;posHSM2_;6!z,x|C,woPDMRUH.zvLsxhiTfjvkWRNY0LTCeIE`yhh][n%"~k@Q]%*?f{yNJFn?j"|p|Gh>Y(D(Bo$R/=C??"HT$vI]X<j6PxGzaZ>16opsHoObvwc[+e@B2||mzWDmRUT>-U]{Z^Y&~4#6ypcuj#wMYM$fjzc6ck(xa@WQTW^9`W"u64./M@$-4>RQ!%kHTHP{mH2Vu|G5Ket~lplk]sKQ4&URpS02uL:.Xn>ec,18(M_qmL>!EpqD{~#[rijR%&9t.1t[ieW}xWoVsjh[}ifN}.PYef*o0'
+
+## Logging level can be one of TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF.
+logging:
+  level:
+    root: WARN
+    br.com.cbyk: INFO
+    org.hibernate.SQL: ERROR
